@@ -2,30 +2,23 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT 0
-#define MEDIA 1
-
 / {
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0: Các phím cơ bản
         default_layer {
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // Vặn trái phải để tăng giảm âm lượng
+            // Vặn núm xoay: Tăng / Giảm âm lượng
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 
             bindings = <
-                &kp Q       &kp W       &kp E       &kp R       
-                &kp A       &kp S       &kp D       &mo MEDIA   // Nhấn giữ núm xoay để sang Layer MEDIA
-            >;
-        };
+                // ---- HÀNG TRÊN (4 phím bình thường để test gõ chữ) ----
+                &kp Q        &kp W        &kp E        &kp R        
 
-        // Layer 1: Chứa các lệnh Bluetooth (Kích hoạt khi nhấn giữ Núm xoay)
-        media_layer {
-            sensor-bindings = <&inc_dec_kp UP DOWN>; // Vặn núm sẽ thành phím Mũi tên Lên/Xuống
-
-            bindings = <
-                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  // Chọn Profile 1,2,3 và Xóa Bluetooth
-                &trans        &trans        &trans        &trans      // Trong suốt (trượt lệnh)
+                // ---- HÀNG DƯỚI (Dành riêng cấu hình Bluetooth & Hệ thống) ----
+                &bt BT_SEL 0 // Nút 1 (Cột 1): Kết nối / Chuyển sang Thiết bị Bluetooth số 1
+                &bt BT_SEL 1 // Nút 2 (Cột 2): Kết nối / Chuyển sang Thiết bị Bluetooth số 2
+                &bt BT_CLR   // Nút 3 (Cột 3): Xóa toàn bộ thiết bị Bluetooth đã lưu (để ghép nối mới)
+                &bootloader  // Nút 4 (Cột 4 - Phím núm xoay): Nhấn vào để đưa mạch về chế độ nạp code (Mass Storage)
             >;
         };
     };
