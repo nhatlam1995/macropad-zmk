@@ -3,15 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    macros {
-        // Macro tắt máy sạch sẽ, không gõ chữ, miễn nhiễm 100% với Telex
-        shutdown_pc: shutdown_pc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(D) &kp LA(F4) &kp ENTER>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -30,7 +21,7 @@
                 &kp PSCRN          // Nút 1: Chụp màn hình (Print Screen)
                 &kp LG(E)          // Nút 2: Mở File Explorer (Win + E)
                 &kp C_AL_CALC      // Nút 3: Mở Calculator (Máy tính)
-                &shutdown_pc       // Nút 4: Tắt máy tính sạch sẽ
+                &kp C_POWER        // Nút 4: Gửi lệnh nguồn phần cứng (Power)
             >;
         };
     };
