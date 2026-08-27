@@ -3,6 +3,17 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    macros {
+        // Macro giả lập tổ hợp tắt nguồn nhanh trên Windows (Win + X -> U -> U)
+        win_shutdown: win_shutdown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <10>;
+            bindings = <&kp LG(X) &kp U &kp U>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -11,14 +22,13 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 
             bindings = <
-
-                // ---- HÀNG DƯỚI (Đã đổi xuống dưới) ----
+                // ---- HÀNG 1 ----
                 &kp LG(N1)         // Nút 1: Mở app vị trí số 1 trên Taskbar
                 &kp LG(N2)         // Nút 2: Mở app vị trí số 2 trên Taskbar
                 &kp LG(N3)         // Nút 3: Mở app vị trí số 3 trên Taskbar
-                &kp K_POWER        // Nút 4: Gửi lệnh nguồn phần cứng (Power)
+                &win_shutdown      // Nút 4: Tắt máy siêu tốc bằng macro Win + X, U, U
 
-                // ---- HÀNG TRÊN (Đã đổi lên trên theo đúng thực tế) ----
+                // ---- HÀNG 2 ----
                 &kp PSCRN          // Nút 1: Chụp màn hình (Print Screen)
                 &kp LG(E)          // Nút 2: Mở File Explorer (Win + E)
                 &kp C_AL_CALC      // Nút 3: Mở Calculator (Máy tính)
