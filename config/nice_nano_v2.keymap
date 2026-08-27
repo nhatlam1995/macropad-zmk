@@ -17,7 +17,7 @@
 
         default_layer {
             // Vặn núm xoay EC11: Tăng / Giảm âm lượng
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
 
             bindings = <
                 // ---- HÀNG TRÊN (3 switch + 1 núm xoay) ----
