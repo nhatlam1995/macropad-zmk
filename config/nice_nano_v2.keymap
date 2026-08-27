@@ -16,7 +16,7 @@
                 &kp LG(N1)         // Nút 1: Mở app vị trí số 1 trên Taskbar
                 &kp LG(N2)         // Nút 2: Mở app vị trí số 2 trên Taskbar
                 &kp LG(N3)         // Nút 3: Mở app vị trí số 3 trên Taskbar
-                &kp C_POWER        // Nút 4: Gửi lệnh nguồn phần cứng (Power)
+                &kp K_POWER        // Nút 4: Gửi lệnh nguồn phần cứng (Power)
 
                 // ---- HÀNG TRÊN (Đã đổi lên trên theo đúng thực tế) ----
                 &kp PSCRN          // Nút 1: Chụp màn hình (Print Screen)
