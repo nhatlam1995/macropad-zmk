@@ -15,13 +15,13 @@
                 &kp PSCRN          // Nút 1: Chụp màn hình (Print Screen)
                 &kp LG(E)          // Nút 2: Mở File Explorer (Win + E)
                 &kp C_AL_CALC      // Nút 3: Mở Calculator (Máy tính)
-                &kp C_POWER        // Nút 4: Gửi lệnh nguồn phần cứng (Power)
+                &bootloader        // Núm xoay (Nhấn xuống): Chế độ nạp code
 
                 // ---- HÀNG DƯỚI (Đã đổi xuống dưới) ----
                 &kp LG(N1)         // Nút 1: Mở app vị trí số 1 trên Taskbar
                 &kp LG(N2)         // Nút 2: Mở app vị trí số 2 trên Taskbar
                 &kp LG(N3)         // Nút 3: Mở app vị trí số 3 trên Taskbar
-                &bootloader        // Núm xoay (Nhấn xuống): Chế độ nạp code
+                &kp C_POWER        // Nút 4: Gửi lệnh nguồn phần cứng (Power)
             >;
         };
     };
