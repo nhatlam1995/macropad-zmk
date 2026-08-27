@@ -41,14 +41,14 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 
             bindings = <
-                // ---- HÀNG DƯỚI (Đã đổi lên trên) ----
+                // ---- HÀNG DƯỚI (Đã chuyển lên trên) ----
                 &kp PSCRN          // Nút 1: Chụp ảnh màn hình (Print Screen)
                 &kp LG(E)          // Nút 2: Mở File Explorer (Win + E)
                 &open_telegram     // Nút 3: Mở Telegram
                 &shutdown_pc       // Nút 4: Tắt máy tính
 
-                // ---- HÀNG TRÊN (Đã đổi xuống dưới + Đổi nút 1 thành Calculator) ----
-                &kp C_CALC         // Nút 1: Mở Calculator (Máy tính)
+                // ---- HÀNG TRÊN (Đã chuyển xuống dưới + Mở Calculator) ----
+                &kp C_AL_CALC      // Nút 1: Mở Calculator (Máy tính)
                 &open_chrome       // Nút 2: Mở Chrome
                 &open_discord      // Nút 3: Mở Discord
                 &bootloader        // EC11 (Nhấn xuống): Đưa mạch về chế độ nạp code
