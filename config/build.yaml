@@ -1,0 +1,4 @@
+# Thư mục config/build.yaml
+include:
+  - board: nice_nano_v2
+    shield: ten_shield_cua_bac
