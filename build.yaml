@@ -1,5 +1,2 @@
 include:
-  - board: nice_nano_v2//zmk
-    shield: nice_nano_v2
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano_v2
