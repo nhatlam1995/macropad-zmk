@@ -4,32 +4,11 @@
 
 / {
     macros {
-        // Macro mở Chrome qua hộp thoại Run (Win + R)
-        open_chrome: open_chrome {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp C &kp H &kp R &kp O &kp M &kp E &kp RET>;
-        };
-
-        // Macro mở Discord qua hộp thoại Run
-        open_discord: open_discord {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp D &kp I &kp S &kp C &kp O &kp R &kp D &kp RET>;
-        };
-
-        // Macro mở Telegram qua hộp thoại Run
-        open_telegram: open_telegram {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp T &kp E &kp L &kp E &kp G &kp R &kp A &kp M &kp RET>;
-        };
-
-        // Macro tắt máy tính nhanh trên Windows (Alt + F4 -> Enter)
+        // Macro tắt máy sạch sẽ, không gõ chữ, miễn nhiễm 100% với Telex
         shutdown_pc: shutdown_pc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(F4) &kp RET>;
+            bindings = <&kp LG(D) &kp LA(F4) &kp ENTER>;
         };
     };
 
@@ -41,17 +20,17 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 
             bindings = <
-                // ---- HÀNG DƯỚI (Đã chuyển lên trên) ----
-                &kp PSCRN          // Nút 1: Chụp ảnh màn hình (Print Screen)
-                &kp LG(E)          // Nút 2: Mở File Explorer (Win + E)
-                &open_telegram     // Nút 3: Mở Telegram
-                &shutdown_pc       // Nút 4: Tắt máy tính
+                // ---- HÀNG TRÊN (3 switch + 1 núm xoay) ----
+                &kp LG(N1)         // Nút 1: Mở app vị trí số 1 trên Taskbar
+                &kp LG(N2)         // Nút 2: Mở app vị trí số 2 trên Taskbar
+                &kp LG(N3)         // Nút 3: Mở app vị trí số 3 trên Taskbar
+                &bootloader        // Núm xoay (Nhấn xuống): Chế độ nạp code
 
-                // ---- HÀNG TRÊN (Đã chuyển xuống dưới + Mở Calculator) ----
-                &kp C_AL_CALC      // Nút 1: Mở Calculator (Máy tính)
-                &open_chrome       // Nút 2: Mở Chrome
-                &open_discord      // Nút 3: Mở Discord
-                &bootloader        // EC11 (Nhấn xuống): Đưa mạch về chế độ nạp code
+                // ---- HÀNG DƯỚI (4 switch) ----
+                &kp PSCRN          // Nút 1: Chụp màn hình (Print Screen)
+                &kp LG(E)          // Nút 2: Mở File Explorer (Win + E)
+                &kp C_AL_CALC      // Nút 3: Mở Calculator (Máy tính)
+                &shutdown_pc       // Nút 4: Tắt máy tính sạch sẽ
             >;
         };
     };
